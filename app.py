@@ -5,8 +5,8 @@ app = Flask(__name__)
 @app.route('/process_url', methods=['GET'])
 def process_url():
     # Get the URL parameter from the request
-    url = request.args.get('url')
-    print(url)
+    email = request.args.get('email')
+    print('E-mail address: '+ email)
     # Perform any necessary processing with the URL
 
     # Redirect the user's browser to a new URL
