@@ -2,11 +2,11 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/execute_script/patient_email')
-def execute_script(patient_email):
+@app.route('patient_email', methods=['GET'])
+def process_url(patient_email):
     # Use the script_parameter in your script execution
     # For example, print it to the console
-    print('Script parameter:', patient_email)
+    url = request.args.get('url')
 
     # Execute your script using the information from the URL
     # Add your script execution logic here
