@@ -11,7 +11,7 @@ def execute_script(patient_email):
     # Execute your script using the information from the URL
     # Add your script execution logic here
 
-    return 'Script executed successfully!'
+    return redirect(url_for('http://www.google.com'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
