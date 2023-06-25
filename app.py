@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, request
 #Only log on to survey system
 
-from selenium import webdriver
+#from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -29,7 +29,7 @@ def new_page():
 @app.route('/create_patient')
 def create_patient():
     options = ChromeOptions()
-    #options.add_argument("--headless=new") #Comment out this line to deactivate headless option
+    options.add_argument("--headless=new") #Comment out this line to deactivate headless option
     driver=webdriver.Chrome(options)
     login_url='https://svara.enkatfabriken.com/b/index.php?r=admin/authentication/sa/login'
 
@@ -41,7 +41,7 @@ def create_patient():
 
     loginbutton=driver.find_element(By.XPATH,'/html/body/div[5]/div/div/div/div/form/div[2]/div/p/button')
     loginbutton.click()
-    return(driver)
+    return(url_for('new_page'))
 
 
 if __name__ == '__main__':
