@@ -27,7 +27,7 @@ def new_page():
     return "Thank you for completing the survey!"
 
 @app.route('/create_patient')
-def create_patient()
+def create_patient():
     options = ChromeOptions()
     #options.add_argument("--headless=new") #Comment out this line to deactivate headless option
     driver=webdriver.Chrome(options)
