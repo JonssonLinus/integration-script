@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, request
 #Only log on to survey system
 
-#from selenium import webdriver
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -41,8 +41,11 @@ def create_patient():
 
     loginbutton=driver.find_element(By.XPATH,'/html/body/div[5]/div/div/div/div/form/div[2]/div/p/button')
     loginbutton.click()
+    print("success")
     return(url_for('new_page'))
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
+
+    #Testing
